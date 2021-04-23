@@ -24,8 +24,9 @@ function runEnter() {
     var inputValue = inputElement.property("value");
 
     console.log(inputValue);
-    console.log(tableData);
+    // console.log(tableData);
 
-    var filteredData = people.filter(datetime => datetime.datetime === inputValue);
+    var filteredData = tableData.filter(fecha => fecha.datetime === inputValue);
 
     console.log(filteredData);
+}
