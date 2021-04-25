@@ -11,6 +11,17 @@ var form = d3.select("form");
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+//On load
+var table = d3.select("tbody");
+table.html("");
+var tableBody = d3.select("tbody");
+tableData.forEach(UFOData => {
+    var trow = tableBody.append("tr")
+    Object.values(UFOData).forEach(value => {
+        trow.append("td").text(value)
+    })
+})
+
 // Complete the event handler function for the form
 function runEnter() {
 
@@ -26,7 +37,32 @@ function runEnter() {
     console.log(inputValue);
     // console.log(tableData);
 
-    var filteredData = tableData.filter(fecha => fecha.datetime === inputValue);
+    if (inputValue === "") {
+        var table = d3.select("tbody");
+        table.html("");
+        var tableBody = d3.select("tbody");
+        tableData.forEach(UFOData => {
+            var trow = tableBody.append("tr")
+            Object.values(UFOData).forEach(value => {
+                trow.append("td").text(value)
+            })
+        })
+    }
+    else {
 
-    console.log(filteredData);
+        var filteredData = tableData.filter(fecha => fecha.datetime === inputValue);
+
+        console.log(filteredData);
+
+        var table = d3.select("tbody");
+        table.html("");
+        var tableBody = d3.select("tbody");
+        filteredData.forEach(UFOData => {
+            var trow = tableBody.append("tr")
+            Object.values(UFOData).forEach(value => {
+                trow.append("td").text(value)
+            })
+        })
+    }
+
 }
