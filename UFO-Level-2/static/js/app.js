@@ -59,57 +59,50 @@ function runEnter() {
             })
         })
     }
-    // There are 26 possible combinations for a single field, two, three, four or all five search fields
+    // There are 31 possible combinations for a single field, two, three, four or all five search fields
     else {
         //single field search - five combinations
         if (inputDateValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue); }
-        if (inputCityValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue); }
-        if (inputStateValue !== "") { var filteredData = filteredData.filter(hoba => hoba.state === inputStateValue); }
-        if (inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.country === inputCountryValue); }
-        if (inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.shape === inputShapeValue); }
+        if (inputCityValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue); }
+        if (inputStateValue !== "") { var filteredData = tableData.filter(hoba => hoba.state === inputStateValue); }
+        if (inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.country === inputCountryValue); }
+        if (inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.shape === inputShapeValue); }
 
         //two fields - ten combinations
         if (inputDateValue !== "" && inputCityValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue); }
-        if (inputDateValue !== "" && inputStateValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.state === inputStateValue); }
-        if (inputDateValue !== "" && inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.country === inputCountryValue); }
-        if (inputDateValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.shape === inputShapeValue); }
-        if (inputCityValue !== "" && inputStateValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue); }
-        if (inputCityValue !== "" && inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.country === inputCountryValue); }
-        if (inputCityValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.shape === inputShapeValue); }
-        if (inputStateValue !== "" && inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.state === inputStateValue && hoba.country === inputCountryValue); }
-        if (inputStateValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.state === inputStateValue && hoba.shape === inputShapeValue); }
-        if (inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputStateValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.state === inputStateValue); }
+        if (inputDateValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.country === inputCountryValue); }
+        if (inputDateValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.shape === inputShapeValue); }
+        if (inputCityValue !== "" && inputStateValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue); }
+        if (inputCityValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.country === inputCountryValue); }
+        if (inputCityValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.shape === inputShapeValue); }
+        if (inputStateValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.state === inputStateValue && hoba.country === inputCountryValue); }
+        if (inputStateValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.state === inputStateValue && hoba.shape === inputShapeValue); }
+        if (inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
 
         //three fields - ten combinations
         if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.country === inputCountryValue); }
+        if (inputDateValue !== "" && inputCityValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.country === inputCountryValue); }
+        if (inputDateValue !== "" && inputCityValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputStateValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.state === inputStateValue && hoba.country === inputCountryValue); }
+        if (inputDateValue !== "" && inputStateValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.state === inputStateValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue); }
+        if (inputCityValue !== "" && inputStateValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.shape === inputShapeValue); }
+        if (inputCityValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
 
-        if (inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue); }
-        if (inputCityValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-
-
+        //for fields = five combinations
         if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputCityValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.shape === inputShapeValue); }
 
+        //all fields
+        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = tableData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
 
-
-
-        if (inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-
-
-
-
-        if (inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-        if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
-
-
-
-        var table = d3.select("tbody"); if (inputDateValue !== "" && inputCityValue !== "" && inputStateValue !== "" && inputCountryValue !== "" && inputShapeValue !== "") { var filteredData = filteredData.filter(hoba => hoba.datetime === inputDateValue && hoba.city === inputCityValue && hoba.state === inputStateValue && hoba.country === inputCountryValue && hoba.shape === inputShapeValue); }
+        var table = d3.select("tbody");
         table.html("");
         var tableBody = d3.select("tbody");
         filteredData.forEach(UFOData => {
